@@ -1,0 +1,13 @@
+﻿You are summarizing a video transcript for students on an eLearning platform.
+
+1. Write a 3 to 5 sentence summary of the main content.
+2. Suggest a clear descriptive title (maximum 10 words).
+3. Choose ONE category: Education, Technology, Finance, Health, Entertainment, Other.
+
+Transcript:
+{transcript}
+
+Respond in exactly this format:
+SUMMARY: <summary here>
+TITLE: <title here>
+CATEGORY: <category here>

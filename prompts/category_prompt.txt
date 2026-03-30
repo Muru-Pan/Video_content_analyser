@@ -1,0 +1,7 @@
+Pick the single best category for the following transcript from this list:
+Education, Technology, Finance, Health, Entertainment, Other.
+
+Transcript:
+{transcript}
+
+Answer with only the category label.

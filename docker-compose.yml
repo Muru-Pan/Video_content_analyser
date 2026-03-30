@@ -1,0 +1,47 @@
+﻿version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: vca-ollama
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: vca-backend
+    env_file:
+      - .env
+    environment:
+      - OLLAMA_HOST=${OLLAMA_HOST:-http://ollama:11434}
+      - WHISPER_CACHE=${WHISPER_CACHE:-/app/whisper_cache}
+      - DATA_DIR=${DATA_DIR:-/app/data}
+    volumes:
+      - app_data:/app/data
+      - whisper_cache:/app/whisper_cache
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: vca-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
+  app_data:
+  whisper_cache:

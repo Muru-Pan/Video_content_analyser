@@ -1,0 +1,30 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment Variables
+.env
+.env.local
+
+# Node / JS
+node_modules/
+dist/
+build/
+.npm/
+
+# App Data
+backend/data/
+*.db
+*.sqlite3
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

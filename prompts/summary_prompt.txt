@@ -1,0 +1,12 @@
+Below is a transcript from a video. Do the following:
+1. Write a 3-5 sentence summary of the main content.
+2. Suggest a clear, descriptive title (max 10 words).
+3. Pick ONE category from: Education, Technology, Finance, Health, Entertainment, Other.
+
+Transcript:
+{transcript}
+
+Respond in this exact format:
+SUMMARY: <your summary here>
+TITLE: <your title here>
+CATEGORY: <one category here>
